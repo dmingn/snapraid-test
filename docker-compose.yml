@@ -1,0 +1,12 @@
+services:
+  snapraid:
+    build: .
+    container_name: snapraid_test
+    volumes:
+      - ./mnt/disk1:/data/disk1
+      - ./mnt/disk2:/data/disk2
+      - ./mnt/disk3:/data/disk3
+      - ./snapraid/parity:/snapraid/parity
+      - ./snapraid/content:/snapraid/content
+      - ./snapraid.conf:/etc/snapraid.conf:ro
+    tty: true
